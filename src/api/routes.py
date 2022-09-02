@@ -36,3 +36,21 @@ def add_user():
                 db.session.rollback() ##### preguntar cual es la funcion de esto. 
                 print(error.args)
                 return jsonify('registry error'), 500
+                
+@api.route('/login', methods=['POST'])
+def login():
+    if request.method == 'POST':
+        body = request.json
+        email = body.get('email', None)
+        password = body.get('password', None)
+
+        login_user = User.query.filter_by(email=email, password=password).one_or_none() ### este metodo es para traer un solo usuario. 
+
+        if login_user:
+            print('tiene persmiso')
+            ##crear eltoken aqui
+            return jsonify('esta logeado'),200
+        else:
+            return jsonify('bad credential'),400
+
+    return jsonify('todobien'),201
