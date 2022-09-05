@@ -34,7 +34,7 @@ def add_user():
         if email is None or password is None:
             return jsonify('All fields are required'), 400
         else:
-            salt = b64encode(os.urandom(32).decode('utf-8'))
+            salt = b64encode(os.urandom(32)).decode('utf-8')
             password = set_password(password, salt)
             request_user = User(email=email, password=password, salt=salt) ##se podria hacer con el metodo init
             db.session.add(request_user)

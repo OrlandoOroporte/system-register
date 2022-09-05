@@ -12,7 +12,7 @@ export const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <Link to="" className="nav-link">
+              <Link to="/images" className="nav-link">
                 Images 
               </Link>
             </li>
@@ -28,12 +28,12 @@ export const Navbar = () => {
               </Link>
               <ul className="dropdown-menu">
                 <li>
-                  <Link to="/Register" className="dropdown-item">
+                  <Link to="/register" className="dropdown-item">
                     Regiter User
                   </Link>
                 </li>
                 <li>
-                  <Link to="/Login"  className="dropdown-item">
+                  <Link to="/login"  className="dropdown-item">
                    Login User 
                   </Link>
                 </li>
