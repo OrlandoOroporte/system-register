@@ -7,6 +7,7 @@ from api.models import db, User
 from api.utils import generate_sitemap, APIException
 from werkzeug.security import generate_password_hash, check_password_hash
 from base64 import b64encode
+from flask_jwt_extended import create_access_token, jwt_required, get_jwt_identity
 
 api = Blueprint('api', __name__)
 
@@ -59,7 +60,10 @@ def login():
         if login_user:
             if check_password(login_user.password, password, login_user.salt):
                 ##crear el token aqui
-                return jsonify('access granted'),200
+                created_token = create_access_token(identity=login_user.id)
+                ##return jsonify({'token':created_token})
+                response = {"token":created_token}
+                return jsonify(response)
             else:
                 return jsonify('bad credential'),400
 
