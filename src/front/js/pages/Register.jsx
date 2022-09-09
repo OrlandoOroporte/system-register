@@ -7,7 +7,7 @@ const Register = () => {
 
   let initialState = {
     email: "",
-    password: "",
+    password: ""
   };
 
   const { actions } = useContext(Context); /// vamos a crear la funcion de registro desde los acction( esta funcion pudiera estar en page por que solo se vera desde aqui)
@@ -17,7 +17,7 @@ const Register = () => {
     //para sincronizar los inputs 
     setUserRegister({
       ...userRegister,
-      [target.name]: target.value,
+      [target.name]: target.value,  ///aqui se hizo una destructuracion de event.target.name
     });
   };
 
@@ -26,14 +26,18 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault(); //para evitar el burbujeo 
     if (userRegister.email.trim() != "" && userRegister.password.trim() != ""){ /// validacion para solictar inf a en los campos email Y password 
-      console.log("registramos");}
-    
-    else {
+      console.log("registramos");
+      let response = await actions.userRegister(userRegister);
+      if(response){
+      console.log("Successfully Registered")
+      }
+      else{
+        alert("can't register")
+      }
+
+    }else {
       console.log("todos los campos son obligatorios")
     } 
-
-
-  
   };
 
   return (
