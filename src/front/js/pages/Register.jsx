@@ -29,7 +29,8 @@ const Register = () => {
       console.log("registramos");
       let response = await actions.userRegister(userRegister);
       if(response){
-      console.log("Successfully Registered")
+      setUserRegister(initialState);
+      alert("Successfully Registered")
       }
       else{
         alert("can't register")
