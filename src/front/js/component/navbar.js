@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import image from "../../img/react-img.png";
 
 export const Navbar = () => {
   const { actions } = useContext(Context);
@@ -9,7 +10,7 @@ export const Navbar = () => {
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container-fluid">
 	  <Link to="/" className="navbar-brand">
-      <img src="../../img/react-img.png" alt="" width="30" height="24" className="d-inline-block align-text-top"/>
+      <img src={image} alt="" width="30" height="24" className="d-inline-block align-text-top"/>
       React Boilerplate
     </Link>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">

@@ -3,24 +3,15 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       message: null,
       token: localStorage.getItem("token") || "",
-      // demo: [
-      //   {
-      //     title: "FIRST",
-      //     background: "white",
-      //     initial: "white",
-      //   },
-      //   {
-      //     title: "SECOND",
-      //     background: "white",
-      //     initial: "white",
-      //   },
-      // ],
+      baseUrl:"https://3001-orlandoorop-systemregis-hyy92y4w9ae.ws-us71.gitpod.io",
+
     },
     actions: {
       userRegister: async (user) => {
+        let store = getStore();
         try {
           let response = await fetch(
-            `https://3001-orlandoorop-systemregis-qg1kuzw32gw.ws-us64.gitpod.io/api/user`,
+            `${store.baseUrl}/api/user`,
             {
               method: "POST",
               headers: {
@@ -37,10 +28,12 @@ const getState = ({ getStore, getActions, setStore }) => {
           console.log(`Error: ${error}`);
         }
       },
-      Login: async () => {
+      login: async (user) => {
+        let store = getStore();
+
         try {
           let response = await fetch(
-            `https://3001-orlandoorop-systemregis-qg1kuzw32gw.ws-us64.gitpod.io/api/login`,
+            `${store.baseUrl}/api/login`,
             {
               method: "POST",
               headers: {

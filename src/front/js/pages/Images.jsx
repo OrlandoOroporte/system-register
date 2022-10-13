@@ -19,13 +19,13 @@ const Images = () => {
             >
               <div className="carousel-inner">
                 <div className="carousel-item active">
-                  <img src="..." className="d-block w-100" alt="..." />
+                  <img src="https://concepto.de/wp-content/uploads/2014/08/programacion-2-e1551291144973.jpg" className="d-block w-100" alt="..." />
                 </div>
                 <div className="carousel-item">
-                  <img src="..." className="d-block w-100" alt="..." />
+                  <img src="https://i.blogs.es/e9f9e0/radowan-nakif-rehan-cyyqhdbj9ti-unsplash/1366_2000.jpg" className="d-block w-100" alt="..." />
                 </div>
                 <div className="carousel-item">
-                  <img src="..." className="d-block w-100" alt="..." />
+                  <img src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2022/03/programacion-javascript-2640901.jpg" className="d-block w-100" alt="..." />
                 </div>
               </div>
               <button
